@@ -2,10 +2,10 @@ class BST {
     constructor() {
         this.korzeń = null
     }
-    wstaw(klucz) {
+    wstaw(key) {
         if(this.korzeń == null){
             this.korzeń = {
-                klucz: klucz,
+                key: key,
                 rodzic: null,
                 lewy: null,
                 prawy: null
@@ -14,10 +14,10 @@ class BST {
         }
         let bieżący = this.korzeń
         while(true) {
-            if(klucz < bieżący.klucz)
+            if(key < bieżący.key)
                 if(bieżący.lewy == null) {
                     bieżący.lewy = {
-                        klucz: klucz,
+                        key: key,
                         rodzic: bieżący,
                         lewy: null,
                         prawy: null
