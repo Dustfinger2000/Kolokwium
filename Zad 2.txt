@@ -1,0 +1,43 @@
+class BST {
+    constructor() {
+        this.korzeń = null
+    }
+    wstaw(klucz) {
+        if(this.korzeń == null){
+            this.korzeń = {
+                klucz: klucz,
+                rodzic: null,
+                lewy: null,
+                prawy: null
+            }
+            return
+        }
+        let bieżący = this.korzeń
+        while(true) {
+            if(klucz < bieżący.klucz)
+                if(bieżący.lewy == null) {
+                    bieżący.lewy = {
+                        klucz: klucz,
+                        rodzic: bieżący,
+                        lewy: null,
+                        prawy: null
+                    }
+                    return
+                }
+                else
+                    bieżący = bieżący.lewy
+            else
+                if(bieżący.prawy == null) {
+                    bieżący.prawy = {
+                        klucz: klucz,
+                        rodzic: bieżący,
+                        lewy: null,
+                        prawy: null
+                    }
+                    return
+                }
+                else
+                    bieżący = bieżący.prawy
+        }
+    }
+}

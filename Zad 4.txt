@@ -1,0 +1,28 @@
+function sprawdźCudzysłowy(napis) {
+    let stos = []
+    for(let znak of napis)
+        if(znak == `"`)
+            if(stos[stos.length-1] == "pod")
+                stos.pop()
+            else
+                stos.push("pod")
+        else if(znak == `'`)
+            if(stos[stos.length-1] == "poj")
+                stos.pop()
+            else
+                stos.push("poj")
+        else if(znak == `|`)
+            if(stos[stos.length-1] == "krecha")
+                stos.pop()
+            else
+                stos.push("krecha")
+    if(stos[stos.length-1] == undefined){
+            console.log('Wszystkie cudzysłowy poprawnie zamknięte');
+            return
+    } 
+    else if(stos[stos.length-1] != undefined) {
+        
+        console.log('Cudzysłowy nie zostały domknięte poprawnie');
+        return 
+    }
+}
